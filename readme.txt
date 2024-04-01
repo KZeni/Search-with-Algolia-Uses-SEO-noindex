@@ -1,8 +1,8 @@
-=== WP Search with Algolia Uses Yoast SEO noindex ===
+=== Search with Algolia Uses Yoast SEO noindex ===
 Contributors: KZeni
 Donate link: https://www.paypal.me/KZeni
 License: GPLv3
-Tags: algolia, search, yoast, seo, noindex, integration
+Tags: algolia, search, yoast, noindex, integration
 Stable tag: 1.0
 Requires at least: 5.5
 Tested up to: 6.4
@@ -16,7 +16,7 @@ Makes it so setting content as noindex using Yoast SEO has it then not show in t
 
 This is a simple & lightweight plugin that simply uses & integrates/connects the official filters made available by the [WP Search with Algolia](https://wordpress.org/plugins/wp-search-with-algolia/) plugin and the post meta values from the [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) plugin to make it so any content where Yoast SEO has it set to noindex then doesn't get indexed by the Algolia plugin upon activation of this plugin.
 
-Check things out on GitHub at [https://github.com/KZeni/WP-Search-with-Algolia-Uses-Yoast-SEO-noindex](https://github.com/KZeni/WP-Search-with-Algolia-Uses-Yoast-SEO-noindex). Also, thanks goes out to [@rayrutjes](https://profiles.wordpress.org/rayrutjes/) (from Algolia) for putting the initial functionality together.
+Check things out on GitHub at [https://github.com/KZeni/Search-with-Algolia-Uses-Yoast-SEO-noindex](https://github.com/KZeni/Search-with-Algolia-Uses-Yoast-SEO-noindex). Also, thanks goes out to [@rayrutjes](https://profiles.wordpress.org/rayrutjes/) (from Algolia) for putting the initial functionality together.
 
 == Frequently Asked Questions ==
 

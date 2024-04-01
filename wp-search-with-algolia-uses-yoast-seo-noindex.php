@@ -1,7 +1,7 @@
 <?php
 /*
- * Plugin name: WP Search with Algolia Uses Yoast SEO noindex
- * Plugin URI: https://wordpress.org/plugins/wp-search-with-algolia-uses-yoast-seo-noindex/
+ * Plugin name: Search with Algolia Uses Yoast SEO noindex
+ * Plugin URI: https://wordpress.org/plugins/search-with-algolia-uses-yoast-seo-noindex/
  * Description: Makes it so setting content as noindex using Yoast SEO has it then not show in the site's search when using WP Search with Algolia.
  * Author: KZeni
  * Author URI: https://kzeni.com
@@ -11,7 +11,7 @@
  * Tested up to: 6.4
  */
 
-// NOTE: "kzeni_algolia_yoast_noindex" is used for scoping since "kzeni_wp_search_with_algolia_uses_yoast_seo_noindex" (use the plugin path's name) is a bit wordy.
+// NOTE: "kzeni_algolia_yoast_noindex" is used for scoping since "kzeni_search_with_algolia_uses_yoast_seo_noindex" (use the plugin path's name) is a bit wordy.
 
 define("KZENI_ALGOLIA_YOAST_NOINDEX_NAME", plugin_basename(__FILE__));
 
@@ -56,15 +56,15 @@ function kzeni_algolia_yoast_noindex_plugin_extra_links($links, $plugin_name)
         return $links;
     }
     $links[] =
-        '<a href="https://github.com/KZeni/WP-Search-with-Algolia-Uses-Yoast-SEO-noindex" target="_blank">' .
+        '<a href="https://github.com/KZeni/Search-with-Algolia-Uses-Yoast-SEO-noindex" target="_blank">' .
         __("GitHub", "kzeni_algolia_yoast_noindex") .
         "</a>";
     $links[] =
-        '<a href="https://wordpress.org/support/plugin/wp-search-with-algolia-uses-yoast-seo-noindex/reviews/" target="_blank">' .
+        '<a href="https://wordpress.org/support/plugin/search-with-algolia-uses-yoast-seo-noindex/reviews/" target="_blank">' .
         __("Reviews", "kzeni_algolia_yoast_noindex") .
         "</a>";
     $links[] =
-        '<a href="https://wordpress.org/support/plugin/wp-search-with-algolia-uses-yoast-seo-noindex/" target="_blank">' .
+        '<a href="https://wordpress.org/support/plugin/search-with-algolia-uses-yoast-seo-noindex/" target="_blank">' .
         __("Support", "kzeni_algolia_yoast_noindex") .
         "</a>";
     return $links;
