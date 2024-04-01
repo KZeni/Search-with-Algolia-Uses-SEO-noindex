@@ -11,9 +11,10 @@
  * Tested up to: 6.4
  */
 
-// NOTE: "kzeni_algolia_yoast_noindex" is used for scoping since "kzeni_search_with_algolia_uses_yoast_seo_noindex" (use the plugin path's name) is a bit wordy.
-
-define("KZENI_ALGOLIA_YOAST_NOINDEX_NAME", plugin_basename(__FILE__));
+define(
+    "KZENI_SEARCH_WITH_ALGOLIA_USES_SEO_NOINDEX_NAME",
+    plugin_basename(__FILE__)
+);
 
 // Per https://github.com/WebDevStudios/wp-search-with-algolia/issues/105 + https://wordpress.org/support/topic/default-behavior-of-yoast-seos-noindex-status-and-indexing-via-algolia/ (based on https://stackoverflow.com/questions/43699035/how-to-stop-algolia-from-indexing-posts-with-noindex-in-wordpress)
 /**
@@ -26,8 +27,10 @@ define("KZENI_ALGOLIA_YOAST_NOINDEX_NAME", plugin_basename(__FILE__));
  *
  * @return bool
  */
-function kzeni_algolia_yoast_noindex_filter($should_index, WP_Post $post)
-{
+function kzeni_search_with_algolia_uses_seo_noindex_filter(
+    $should_index,
+    WP_Post $post
+) {
     if (false === $should_index) {
         return false;
     }
@@ -39,39 +42,41 @@ function kzeni_algolia_yoast_noindex_filter($should_index, WP_Post $post)
 // Hook into Algolia to manipulate the post that should be indexed.
 add_filter(
     "algolia_should_index_searchable_post",
-    "kzeni_algolia_yoast_noindex_filter",
+    "kzeni_search_with_algolia_uses_seo_noindex_filter",
     10,
     2
 );
 add_filter(
     "algolia_should_index_post",
-    "kzeni_algolia_yoast_noindex_filter",
+    "kzeni_search_with_algolia_uses_seo_noindex_filter",
     10,
     2
 );
 
-function kzeni_algolia_yoast_noindex_plugin_extra_links($links, $plugin_name)
-{
-    if ($plugin_name != KZENI_ALGOLIA_YOAST_NOINDEX_NAME) {
+function kzeni_search_with_algolia_uses_seo_noindex_plugin_extra_links(
+    $links,
+    $plugin_name
+) {
+    if ($plugin_name != KZENI_SEARCH_WITH_ALGOLIA_USES_SEO_NOINDEX_NAME) {
         return $links;
     }
     $links[] =
         '<a href="https://github.com/KZeni/Search-with-Algolia-Uses-SEO-noindex" target="_blank">' .
-        __("GitHub", "kzeni_algolia_yoast_noindex") .
+        __("GitHub", "kzeni_search_with_algolia_uses_seo_noindex") .
         "</a>";
     $links[] =
         '<a href="https://wordpress.org/support/plugin/search-with-algolia-uses-seo-noindex/reviews/" target="_blank">' .
-        __("Reviews", "kzeni_algolia_yoast_noindex") .
+        __("Reviews", "kzeni_search_with_algolia_uses_seo_noindex") .
         "</a>";
     $links[] =
         '<a href="https://wordpress.org/support/plugin/search-with-algolia-uses-seo-noindex/" target="_blank">' .
-        __("Support", "kzeni_algolia_yoast_noindex") .
+        __("Support", "kzeni_search_with_algolia_uses_seo_noindex") .
         "</a>";
     return $links;
 }
 add_filter(
     "plugin_row_meta",
-    "kzeni_algolia_yoast_noindex_plugin_extra_links",
+    "kzeni_search_with_algolia_uses_seo_noindex_plugin_extra_links",
     10,
     2
 );
